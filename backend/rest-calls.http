@@ -1,0 +1,48 @@
+###########################
+#     General enpoints    #
+###########################
+
+
+### Insert new company
+POST http://localhost:9023/frontend/insert-ad HTTP/1.1
+content-type: application/json
+
+{
+    "api_key": "{{$dotenv FRONTEND_API_KEY}}",
+    "description": "Google LLC is an American multinational technology company that specializes in Internet-related services and products.",
+    "one_liner": "Organizing the world's information and making it universally accessible and useful.",
+    "link": "https://www.google.com",
+    "user_id": 59,
+    "CTA": "Learn more",
+    "credits_left": 4500
+}
+
+
+### Get ads
+POST http://localhost:9023/api/get-ads HTTP/1.1
+content-type: application/json
+
+{
+    "api_key": "a",
+    "text": "i want to find info about potatoes",
+    "amount_of_ads": 3
+}
+
+### Get ads
+POST http://localhost:9023/frontend/get-user-info HTTP/1.1
+content-type: application/json
+
+{
+    "user_id": 1,
+    "api_key": "{{$dotenv FRONTEND_API_KEY}}"
+}
+
+
+### Get ads productizedon
+POST http://ai-ads.yazero.io:9023/ai-ads/api/get-ads HTTP/1.1
+content-type: application/json
+
+{
+    "text": "i want to find info about potatoes",
+    "amount_of_ads": 3
+}

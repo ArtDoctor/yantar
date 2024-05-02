@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  yantar-backend:
+    image: yantar-backend:latest
+    restart: always
+    ports:
+      - 9024:9024
+    environment:
+      - VIRTUAL_HOST=${DOMAIN}
+      - VIRTUAL_PORT=9024
+      - LETSENCRYPT_HOST=${DOMAIN}
+  
